@@ -143,4 +143,53 @@ int main() {
 			cout << "5. Keluar" << endl;
 			cout << "pilihan : ";
 			cin >> pilihan;
-			
+			switch (pilihan)
+			{
+			case 1:
+				addNode();
+				cout << "Data Berhasil Ditambhkan" << endl;
+				system("pause");
+				system("cls");
+				break;
+			case 2:
+				if (listEmpty())
+				{
+					cout << "List kosong" << endl;
+					system("pause");
+					system("cls");
+					break;
+				}
+				int nim;
+				cout << "Masukan Nim : ";
+				cin >> nim;
+				if (deleteNode(nim)) {
+					cout << "nim : " << " Berhasil di hapus " << endl;
+					system("pause");
+					system("cls");
+
+				}
+				else
+					cout << "Data tidak ditemukan" << endl;
+				break;
+			case 3:
+				teraverse();
+				break;
+			case 4:
+				searchData();
+				break;
+			case 5:
+				break;
+			default:
+				cout << "Pilihan tidak ada" << endl;
+				break;
+			}
+		}
+		catch (exception e)
+		{
+			cout << "Terjadi kesalahan" << endl;
+		}
+	} while (pilihan != 5);
+}
+
+
+
